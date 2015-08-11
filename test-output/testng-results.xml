@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Data acquired for the two Lists]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="346" started-at="2015-08-11T08:41:05Z" finished-at="2015-08-11T08:41:05Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="346" started-at="2015-08-11T08:41:05Z" finished-at="2015-08-11T08:41:05Z">
+      <class name="myPackage.TaxPersonTest">
+        <test-method status="PASS" signature="ReadExcelFile()[pri:0, instance:myPackage.TaxPersonTest@21a06946]" name="ReadExcelFile" is-config="true" duration-ms="313" started-at="2015-08-11T01:41:05Z" finished-at="2015-08-11T01:41:05Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Data acquired for the two Lists]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- ReadExcelFile -->
+        <test-method status="PASS" signature="CalculateCost()[pri:0, instance:myPackage.TaxPersonTest@21a06946]" name="CalculateCost" duration-ms="9" started-at="2015-08-11T01:41:05Z" finished-at="2015-08-11T01:41:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CalculateCost -->
+      </class> <!-- myPackage.TaxPersonTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
