@@ -99,14 +99,13 @@ public class TaxPersonTest {
 	}
 
 	@Test
-	@Parameters("para_choices")
 	public static void CalculateCost()
 	{
 		float tax=0;
 		// this test could have acquired data from parameter annotation
 		char[] choices={ 'n','l','n','l','l','l'};
 		char validLux = 'l';
-		char validNecess = 'n'
+		char validNecess = 'n';
 		for(int index=0;index<choices.length;index++)
 		{
 			if(choices[index]==validNecess.toUpper())
