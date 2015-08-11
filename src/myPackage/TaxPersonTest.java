@@ -108,11 +108,11 @@ public class TaxPersonTest {
 		char validNecess = 'n';
 		for(int index=0;index<choices.length;index++)
 		{
-			if(choices[index]==validNecess.toUpper())
+			if(choices[index]==validNecess)
 			{
 				tax = TaxPrices.get(index) * necessTax;
 			}
-			else if(choices[index]==validLux.toUpper())
+			else if(choices[index]==validLux)
 			{
 				tax = TaxPrices.get(index) + luxTax;
 			}
