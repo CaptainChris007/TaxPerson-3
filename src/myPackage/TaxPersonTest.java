@@ -17,6 +17,7 @@ import jxl.write.biff.RowsExceededException;
 
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -122,9 +123,40 @@ public class TaxPersonTest {
 				Assert.assertNotEquals('l', 'n', "Choices 'l' or 'n' not used");
 			}
 			TaxAmount.add((double) tax);
-			System.out.println("Cost of " + TaxNames.get(index) + " is ." + (TaxPrices.get(index) + tax) + "pennies");
+			System.out.println("Cost of " + TaxNames.get(index) + " is " + (TaxPrices.get(index) + tax) + "pennies");
 		}
 		
+	}
+	@DataProvider(name = "setChoices")
+	public Object [][] AcquireCharChoices()
+	{
+		return new Object[][] {{"lnlnlnl"}};
+	}
+	@Test(dataProvider = "setChoices")
+	public static void CalculateCostDataProvider(String choice)
+	{
+		System.out.println("Inside DataProvider");
+		float tax=0;
+		String validLux = "l";
+		String validNecess = "n";
+		for(int index=0;index<TaxNames.size();index++)
+		{
+			if(choice.charAt(index)==validNecess.toUpperCase().charAt(0))
+			{
+				tax = TaxPrices.get(index) * necessTax;
+			}
+			else if(choice.charAt(index)==validLux.toUpperCase().charAt(0))
+			{
+				tax = TaxPrices.get(index) + luxTax;
+			}
+			else
+			{
+				Reporter.log("Option invalid");
+				Assert.assertNotEquals('l', 'n', "Choices 'l' or 'n' not used");
+			}
+			TaxAmount.add((double) tax);
+			System.out.println("Cost of " + TaxNames.get(index) + " is " + (TaxPrices.get(index) + tax) + "pennies in DataProvider");
+		}
 	}
 	@AfterClass
 	public static void Finished()
